@@ -1459,7 +1459,7 @@ redis:
 # Ref: https://github.com/DandyDeveloper/charts/blob/master/charts/redis-ha/values.yaml
 redis-ha:
   # -- Enables the Redis HA subchart and disables the custom Redis single node deployment
-  enabled: false
+  enabled: true
   ## Redis image
   image:
     # -- Redis repository
@@ -1566,9 +1566,9 @@ server:
   ## Argo CD server Horizontal Pod Autoscaler
   autoscaling:
     # -- Enable Horizontal Pod Autoscaler ([HPA]) for the Argo CD server
-    enabled: false
+    enabled: true
     # -- Minimum number of replicas for the Argo CD server [HPA]
-    minReplicas: 1
+    minReplicas: 2
     # -- Maximum number of replicas for the Argo CD server [HPA]
     maxReplicas: 5
     # -- Average CPU utilization percentage for the Argo CD server [HPA]
@@ -2205,9 +2205,9 @@ repoServer:
   ## Repo server Horizontal Pod Autoscaler
   autoscaling:
     # -- Enable Horizontal Pod Autoscaler ([HPA]) for the repo server
-    enabled: false
+    enabled: true
     # -- Minimum number of replicas for the repo server [HPA]
-    minReplicas: 1
+    minReplicas: 2
     # -- Maximum number of replicas for the repo server [HPA]
     maxReplicas: 5
     # -- Average CPU utilization percentage for the repo server [HPA]
@@ -2581,7 +2581,7 @@ applicationSet:
   name: applicationset-controller
 
   # -- The number of ApplicationSet controller pods to run
-  replicas: 1
+  replicas: 2
 
   ## ApplicationSet controller Pod Disruption Budget
   ## Ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
